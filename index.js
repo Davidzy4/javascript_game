@@ -1,10 +1,11 @@
 const prompt = require("prompt-sync")();
+const chalk = require('chalk');
 
 // game elemetns
-const GRASS = "░";
-const HOLE = "0";
-const HAT = "^";
-const PLAYER = "*";
+const GRASS = chalk.bgGreen('░');
+const HOLE = chalk.red('0');
+const HAT = chalk.green('^');
+const PLAYER = chalk.blue('*');
 
 const rows = 20;
 const cols = 20;
@@ -22,9 +23,9 @@ for(let i=0; i<rows; i++){
     }
 }
 
-// TODO - Populate player at start of game
+// Populate player at start of game
 field[0][0] = PLAYER;
-// console.log(field);
+console.log(field);
 
 for (let row of field) {
     console.log(row.join(""));
